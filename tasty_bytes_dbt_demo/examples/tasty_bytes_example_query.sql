@@ -1,3 +1,5 @@
+SHOW TABLES IN DATABASE tasty_bytes_dbt_db;
+
 -- What tables exist?
 SHOW TABLES IN SCHEMA tb_101.raw_pos;
 
@@ -24,3 +26,12 @@ cl.last_name, cl.phone_number, cl.e_mail;
 SHOW TABLES IN DATABASE tasty_bytes_dbt_db;
 
 SHOW VIEWS IN DATABASE tasty_bytes_dbt_db;
+
+CREATE DBT PROJECT "TASTY_BYTES_DBT_DB"."DEV"."TASTY_BYTES_DBT_PROJECT" FROM $$snow://workspace/USER$AKHOKHLOV.PUBLIC."tasty_bytes_dbt"/versions/live/tasty_bytes_dbt_demo$$;
+
+
+SHOW DBT PROJECTS LIKE 'tasty%';
+
+DROP WAREHOUSE IF EXISTS tasty_bytes_dbt_wh;
+DROP DATABASE IF EXISTS tasty_bytes_dbt_db;
+DROP DATABASE IF EXISTS tb_101;
